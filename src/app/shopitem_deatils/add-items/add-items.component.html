@@ -1,0 +1,61 @@
+<app-header></app-header>
+<main>
+  <form [formGroup]="inventoryForm" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col">
+        <label class="form-label"><b>Item Name</b></label>
+        <input type="text" class="form-control" placeholder="Enter item name" formControlName="item_name">
+        <div *ngIf="f['item_name'].touched && f['item_name'].invalid">
+          <span *ngIf="f['item_name'].errors.required" class="error">
+            Item name is required
+          </span>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label"><b>Item Category</b></label>
+        <input type="text" class="form-control" placeholder="Enter item category" formControlName="category">
+        <div *ngIf="f['category'].touched && f['category'].invalid">
+          <span *ngIf="f['category'].errors.required" class="error">
+            Item category is required
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="form-label"><b>Item price</b></label>
+        <input type="text" class="form-control" placeholder="Enter item price" formControlName="price">
+        <div *ngIf="f['price'].touched && f['price'].invalid">
+          <span *ngIf="f['price'].errors.required" class="error">
+            Item price is required
+          </span>
+        </div>
+      </div>
+      <div class="col">
+        <label class="form-label"><b>Item Added By</b></label>
+        <input type="text" class="form-control" placeholder="Item added by" formControlName="added_by">
+        <div *ngIf="f['added_by'].touched && f['added_by'].invalid">
+          <span *ngIf="f['added_by'].errors.required" class="error">
+            Added by is required
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="form-label"><b>Item Description</b></label>
+        <textarea type="text" class="form-control" placeholder="Enter Item description" formControlName="description"
+          rows="3"></textarea>
+        <div *ngIf="f['description'].touched && f['description'].invalid">
+          <span *ngIf="f['description'].errors.required" class="error">
+            Description by is required
+          </span>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-warning w-25" [disabled]="inventoryForm.invalid">SAVE</button>
+    </div>
+  </form>
+</main>

@@ -1,0 +1,19 @@
+/* ag Grid */
+.size-select {
+  width: 60px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.search-input {
+  width: 250px;
+  float: right;
+}
+.div-shadow {
+  box-shadow: 0 0 6px #00000029;
+  border-radius: 4px;
+  padding: 20px;
+}
+.btn-align {
+  text-align: right;
+}
